@@ -1,8 +1,10 @@
+import styles from './SingleTodo.module.css'
 
-const SingleTodo: React.FC<{text: string}> = (props) => {
+const SingleTodo: React.FC<{text: string; onRemoveTodo: () => void}> = (props) => {
+
 
   return (
-    <li>{props.text}</li>
+    <li onClick={props.onRemoveTodo} className={styles.item}>{props.text}</li>
   )
 }
 

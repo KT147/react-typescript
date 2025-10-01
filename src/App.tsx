@@ -13,11 +13,17 @@ function App() {
     })
   }
 
+  function removeTodoHandler(todoId: string) {
+    setTodos((prevState) => {
+      return prevState.filter(todo => todo.id !== todoId)
+    })
+  }
+
   
   return (
     <div >
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos onRemoveTodo={removeTodoHandler} items={todos} />
     </div>
   );
 }
