@@ -1,7 +1,8 @@
 import { useRef } from "react";
 
 
-const NewTodo: React.FC<{onAddTodo: }> = (props) => {
+
+const NewTodo: React.FC<{onAddTodo: (text: string) => void }> = (props) => {
 
     const todoTextInputRef = useRef<HTMLInputElement>(null)
 
@@ -21,7 +22,7 @@ const NewTodo: React.FC<{onAddTodo: }> = (props) => {
 
   return (
     <form onSubmit={sumbitHandler}>
-      <label htmlFor="text"></label>
+      <label htmlFor="text">Todo text</label>
       <input type="text" id="text" ref={todoTextInputRef}/>
       <button>Add</button>
     </form>
